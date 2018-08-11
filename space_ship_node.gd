@@ -6,18 +6,18 @@ var speed = 1
 func _physics_process(delta):
 	# left right forward back
 	var to_move = Vector3(0,0,0)
-	if Input.is_action_pressed("move_forward"):
+	if Input.is_key_pressed(KEY_W):
 		to_move+=Vector3(0,0,1)
-	if Input.is_action_pressed("move_back"):
+	if Input.is_key_pressed(KEY_S):
 		to_move+=Vector3(0,0,-1)
-	if Input.is_action_pressed("move_left"):
+	if Input.is_key_pressed(KEY_A):
 		to_move+=Vector3(1,0,0)
-	if Input.is_action_pressed("move_right"):
+	if Input.is_key_pressed(KEY_D):
 		to_move+=Vector3(-1,0,0)
 	# up and down
-	if Input.is_action_pressed("move_up"):
+	if Input.is_key_pressed(KEY_R):
 		to_move+=Vector3(0,-1,0)
-	if Input.is_action_pressed("move_down"):
+	if Input.is_key_pressed(KEY_F):
 		to_move+=Vector3(0,1,0)
 	
 	to_move = to_move.rotated(Vector3(1,0,0),$Camera.rotation.x)
